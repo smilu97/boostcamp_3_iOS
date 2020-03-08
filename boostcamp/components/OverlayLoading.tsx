@@ -11,7 +11,7 @@ const Container = styled.View`
   z-index: 10000;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: white;
 `;
 
 export type OverlayLoadingProps = {

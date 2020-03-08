@@ -7,6 +7,11 @@ import MovieCollectionNav from './MovieCollectionNav';
 
 const RootTab = createBottomTabNavigator();
 
+const titles = {
+  MovieTableNav: 'Table',
+  MovieCollectionNav: 'Collection',
+};
+
 function RootNav() {
   return (
     <RootTab.Navigator
@@ -18,11 +23,12 @@ function RootNav() {
             return <Entypo name="grid" size={size} color={color} />;
           }
           return null;
-        }
+        },
+        title: titles[route.name],
       })}
       tabBarOptions={{
         activeTintColor: 'tomato',
-        inactiveTintColor: 'gray'
+        inactiveTintColor: 'gray',
       }}
     >
       <RootTab.Screen name="MovieTableNav" component={MovieTableNav} />

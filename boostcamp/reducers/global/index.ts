@@ -6,8 +6,9 @@ import {
 } from './actions';
 
 const globalInitState = {
-  fetchingMovies: true,
+  fetchingMovies: false,
   errorMovies: null,
+  orderType: 0,
   movies: [],
 };
 
@@ -18,11 +19,12 @@ function handleFetchMovies(state) {
   });
 }
 
-function handleFetchMoviesSuccess(state, { movies }) {
+function handleFetchMoviesSuccess(state, { orderType, movies }) {
   return produce(state, draft => {
     draft.fetchingMovies = false;
     draft.errorMovies = null;
     draft.movies = movies;
+    draft.orderType = orderType;
   });
 }
 
